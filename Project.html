@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="image/Logo.png">
+
+    <!-- CDN integrations -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- PC responsive -->
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*background: linear-gradient(to bottom right, rgb(17, 0, 41), rgb(0, 18, 20));*/
+    background-image: url('image/pexels-pixabay-33545.jpg');
+    background-size: 1300px 720px;
+    background-position: center;
+    display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+}
+::selection{
+  background-color: aqua;
+  color: black;
+}
+
+::-webkit-scrollbar{
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track{
+    background-color: rgb(6, 0, 48);
+  }
+  
+  ::-webkit-scrollbar-thumb{
+    background-color: #737272;
+    border-radius: 20px;
+  }
+
+  .main{
+    width: 480px; /* Set the width as needed */
+    height: max-content; /* Set the height as needed */
+    background-color: #0000008a;
+    backdrop-filter: blur(0px);
+    position: absolute;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .main .leftdock{
+    margin-left: 80px;
+  }
+
+  .main .leftdock .topdock{
+    padding: 20px;
+    text-align: left;
+  }
+
+  .main .leftdock .topdock h2{
+    font-size: 30px;
+  }
+
+  .main .leftdock .bottomdock{
+    /*background-color: green;*/
+    padding-left: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: left;
+    letter-spacing: 1px;
+  }
+
+  .main .leftdock .bottomdock h4{
+    font-size: 20px;
+  }
+
+  .main .leftdock .bottomdock h2{
+    font-size: 40px;
+  }
+
+  .main .leftdock .bottomdock p{
+    color: white;
+    text-align: justify;
+    font-weight: 500;
+  }
+
+  .main .leftdock .bottomdock .reck{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .main .leftdock .bottomdock .reck #btn{
+    background-color: #525050bd;
+    border: 1px solid rgba(138, 138, 138, 0.308);
+    text-decoration: none;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 50px;
+    border-radius: 9px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    padding-left: 6px;
+    color: rgb(255, 255, 255);
+  }
+
+  .main .leftdock .bottomdock .reck #btn:hover{
+    background: aqua;
+    box-shadow: 0 0 10px aqua, 0 0 40px aqua, 0 0 80px aqua;
+  }
+
+  .main .leftdock .bottomdock .reck .reck-left a{
+    color: white;
+    font-size: 30px;
+    letter-spacing: 40px;
+  }
+
+  .main .leftdock .bottomdock .reck .reck-left a:hover{
+    color: aqua;
+  }
+
+  .main .rightdock{
+    padding: 20px;
+    /*background-color: blue;*/
+  }
+
+  .main .rightdock .photo img{
+    width: 70%;
+    background: aqua;
+    box-shadow: 0 0 10px aqua, 0 0 40px aqua, 0 0 80px aqua;
+    border-radius: 150PX;
+    margin-top: 50px;
+  }
+
+  span{
+    color: aqua;
+  }
+  
+  .navbar {
+    overflow: hidden;
+    margin:8px;
+    border-radius: 30px;
+    background-color: #44444a5e;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    align-items: center;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    width: 50%;
+  }
+  
+  .navbar a {
+    float:none;
+    display: block;
+    color: #acaaaa;
+    text-align: center;
+    padding: 14px 14px;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 5%;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .navbar a:hover {
+    color: aqua;
+    border-bottom: 2px solid aqua;
+  }
+
+.main .status{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.main .status .status-left{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.main .status .status-right{
+  font-size: 20px;
+}
+    </style>
+    
+    <!-- Mobile responsive -->
+
+    <style media="screen and (max-device-width: 480px)">@import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /*background: linear-gradient(to bottom right, rgb(17, 0, 41), rgb(0, 18, 20));*/
+            background-image: url('image/pexels-pixabay-33545.jpg');
+            background-size: 1300px 940px;
+            background-position: center;
+            display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 100vh;
+              margin: 0;
+        }
+        ::selection{
+          background-color: aqua;
+          color: black;
+        }
+        
+        ::-webkit-scrollbar{
+            width: 6px;
+          }
+          
+          ::-webkit-scrollbar-track{
+            background-color: rgb(6, 0, 48);
+          }
+          
+          ::-webkit-scrollbar-thumb{
+            background-color: #737272;
+            border-radius: 20px;
+          }
+        
+          .main{
+            width: 480px; /* Set the width as needed */
+            height: max-content; /* Set the height as needed */
+            background-color: #0000008a;
+            backdrop-filter: blur(0px);
+            position: absolute;
+            text-align: center;
+            color: white;
+            padding: 0px;
+            width: 100%;
+            height: 100%;
+            display: block;
+          }
+        
+          .main .leftdock{
+            margin-left: 0px;
+            width: 96%;
+          }
+        
+          .main .leftdock .topdock{
+            padding: 5px;
+            text-align: left;
+          }
+        
+          .main .leftdock .topdock h2{
+            font-size: 30px;
+          }
+        
+          .main .leftdock .bottomdock{
+            /*background-color: green;*/
+            padding-left: 20px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            text-align: left;
+            letter-spacing: 1px;
+          }
+        
+          .main .leftdock .bottomdock h4{
+            font-size: 20px;
+          }
+        
+          .main .leftdock .bottomdock h2{
+            font-size: 20px;
+          }
+        
+          .main .leftdock .bottomdock p{
+            color: white;
+            text-align: left;
+            font-weight: 400;
+          }
+        
+          .main .leftdock .bottomdock .reck{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+          }
+        
+          .main .leftdock .bottomdock .reck #btn{
+            background-color: #525050bd;
+            border: 1px solid rgba(138, 138, 138, 0.308);
+            text-decoration: none;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            padding-left: 50px;
+            border-radius: 9px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 400;
+            padding-left: 6px;
+            color: rgb(255, 255, 255);
+          }
+        
+          .main .leftdock .bottomdock .reck #btn:hover{
+            background: aqua;
+            box-shadow: 0 0 10px aqua, 0 0 40px aqua, 0 0 80px aqua;
+          }
+        
+          .main .leftdock .bottomdock .reck .reck-left a{
+            color: white;
+            font-size: 30px;
+            letter-spacing: 15px;
+          }
+        
+          .main .leftdock .bottomdock .reck .reck-left a:hover{
+            color: aqua;
+          }
+        
+          .main .rightdock{
+            padding: 20px;
+            /*background-color: blue;*/
+          }
+        
+          .main .rightdock .photo img{
+            width: 70%;
+            background: aqua;
+            box-shadow: 0 0 10px aqua, 0 0 40px aqua, 0 0 80px aqua;
+            border-radius: 150PX;
+            margin-top: 50px;
+          }
+        
+          span{
+            color: aqua;
+          }
+          
+          .navbar {
+            overflow: hidden;
+            margin:8px;
+            border-radius: 30px;
+            background-color: #44444a5e;
+            backdrop-filter: blur(10px);
+            position: absolute;
+            align-items: center;
+            bottom: 0;
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+            width: 98%;
+          }
+          
+          .navbar a {
+            float:none;
+            display: block;
+            color: #acaaaa;
+            text-align: center;
+            padding: 14px 14px;
+            text-decoration: none;
+            font-size: 20px;
+            margin-left: 5%;
+            border-bottom: 2px solid transparent;
+          }
+          
+          .navbar a:hover {
+            color: aqua;
+            border-bottom: 2px solid aqua;
+          }
+        
+          .main .status{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.main .status .status-left{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.main .status .status-right{
+  font-size: 20px;
+}
+        
+          
+        
+          
+         </style>
+</head>
+<body>
+    <div class="main">
+
+        <div class="leftdock">
+            <div class="topdock">
+                <!--h2><span>P</span>ortfolio.</h2-->
+            </div>
+            <div class="bottomdock">
+                <h2>My <span>Projects</span></h2>
+                <br>
+                <h4>Please see the link below for details :</h4>
+                <br>
+                <div class="project" style="font-size: 30px;">
+                    <li><a href="https://edge24.github.io/The-Fork/" style="text-decoration: none; color: white;">https://edge24.github.io/The-Fork/</a></li>
+                    <li><a href="https://edge24.github.io/Demo-landing-page/" style="text-decoration: none; color: white;">https://edge24.github.io/Demo-landing-page/</a></li>
+                    <li><a href="https://edge24.github.io/art/" style="text-decoration: none; color: white;">https://edge24.github.io/art/</a></li>
+                    <li><a href="https://edge24.github.io/Newspaper/" style="text-decoration: none; color: white;">https://edge24.github.io/Newspaper/</a></li>
+                    <li><a href="https://edge24.github.io/note/" style="text-decoration: none; color: white;">https://edge24.github.io/note/</a></li>
+                </div>
+            </div>
+        </div>
+
+        <div class="rightdock">
+            <div class="photo">
+                <img src="image/DP1.png" alt="">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="navbar">
+        <a href="index.html" class="active"><i class="fa fa-home"></i></a>
+        <a href="Personal-info.html"><i class="fa fa-user" aria-hidden="true"></i></a>
+        <a href="Education.html"><i class="fa-solid fa-graduation-cap"></i></a>
+        <a href="Skill.html"><i class="fas fa-pen"></i></a>
+        <a href="#"><i class="fa fa-folder" aria-hidden="true"></i></a>
+    </div>
+
+</body>
+</html>
